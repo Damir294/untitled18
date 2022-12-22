@@ -1,9 +1,12 @@
 package Product;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+
 public class ProductList {
     private final Set<Product> products = new HashSet<>();
+
     public void addProduct(Product product) {
         if (product == null) {
             return;
@@ -12,15 +15,6 @@ public class ProductList {
             throw new RuntimeException("Дубликат");
         } else {
             this.products.add(product);
-        }
-    }
-
-    public void checkProduct(String name) {
-        for (Product product : this.products) {
-            if (product.getName().equals(name)) {
-                product.setChecked();
-                break;
-            }
         }
     }
 
@@ -33,6 +27,7 @@ public class ProductList {
             }
         }
     }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
